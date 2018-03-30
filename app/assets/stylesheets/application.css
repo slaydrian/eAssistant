@@ -467,9 +467,10 @@ span.psw {
 table#tsk {
   width:100%;
   margin:0 0 3em;
-  border-top:1px solid #ccc;
-  border-spacing:0px
+  border-top:0px solid #ccc;
+  border-spacing:0px;
 }
+
 table#tsk tr th, table#tsk tr td {
   text-align:center;
   font-size:12px;
@@ -493,6 +494,28 @@ table#tsk a {
 table#tsk a:hover {
   text-decoration: underline;
   background-color: white;
+}
+
+table#tsk th, table#tsk tr {
+  height: 50px;
+}
+
+table#tsk thead th:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+table#tsk thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+table#tsk tbody tr:last-child td:first-child {
+        border-radius: 0 0 0 10px;
+    }
+table#tsk tbody tr:last-child td:last-child {
+        border-radius: 0 0 10px 0;
+}
+table#tsk td {
+  font-weight: normal;
 }
 
 .bgline {
@@ -635,6 +658,10 @@ table#tsk a:hover {
 @media screen and (max-height: 100px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+.fc-button-group {
+  width: 100px;
 }
 
 /* table#tsk thead tr {background: #0FF}
