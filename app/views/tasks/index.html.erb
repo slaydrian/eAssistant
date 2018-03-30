@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/img/logo.png">
+  <link rel="icon" href="/img/logo-square.png">
   <link rel="stylesheet" type="text/css" href="application.css">
   <script type="text/javascript" src="/path/to/jquery-latest.js"></script>
   <script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script>
@@ -12,8 +12,8 @@
   </title>
 </head>
 <body>
-  <div onclick="openNav()" class="top-bar">
-    Welcome back, <%= @current_user.user_id %>! &#9668;
+  <div id="topbar" onclick="openNav()" class="top-bar">
+      Welcome back, <%= @current_user.user_id %>! &#9668;
   </div>
   <div id="SideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -52,7 +52,7 @@
         <% if(task.task_user.to_i == @current_user.id)%>
         <tr>
           <td><%= link_to task.task_name, edit_task_path(task), remote: true %></td>
-          <td><%= task.deadline_date %>:<%= task.deadline_time.hour%>:<%= task.deadline_time.min%></td>
+          <td><%= task.deadline_date%></td>
           <!-- <% if(task.required_time.hour == 0)%>
           <td><%= task.required_time.min %>分</td>
           <% else %>
@@ -70,8 +70,9 @@
     <br>
   </div>
   <p class=".flash"></p>
+  <p class=".flash"></p>
 </body>
 </html>
 <script type="text/javascript">
 
-</script>
+<%= link_to 'タスク追加', new_task_path %>

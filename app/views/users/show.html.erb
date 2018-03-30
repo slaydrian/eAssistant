@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/img/logo.png">
+  <link rel="icon" href="/img/logo-square.png">
   <link rel="stylesheet" type="text/css" href="application.css">
   <script type="text/javascript" src="application.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +10,9 @@
   </title>
 </head>
 <body>
-
   <!-- <a href="#" class="add">Scroll To Top</a> -->
-  <div onclick="openNav()" class="top-bar">
-    Welcome back, <%= @user.user_id %>! &#9668;
+  <div id="topbar" onclick="openNav()" class="top-bar">
+      Welcome back, <%= @user.user_id %>! &#9668;
   </div>
   <div id="SideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -40,9 +39,15 @@
   </div>
   <div class="main-container">
     <br>
-    <div id="event_calendar"></div>
-    <div id="calendar-form"></div>
-    <br><br><br><br>
+    <div id="calendar"></div>
+    <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'"
+      class="close" id="id02-close" title="Close Modal">&times;</span>
+      <div class="modal-content animate">
+        <div id="form-container" class="container"></div>
+      </div>
+    </div>
   </div>
+  <br><br><br><br>
 </body>
 </html>

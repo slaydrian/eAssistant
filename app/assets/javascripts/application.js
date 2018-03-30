@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require lib/jquery.min
 //= require rails-ujs
 //= require turbolinks
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/ja
+//= require lib/moment.min
+//= require fullcalendar.min
+//= require locale/ja
 //= require jquery-tablesorter
 //= require_tree .
 
@@ -29,7 +29,7 @@ function dropdownfunction() {
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.top-bar')) {
+  if (!event.target.matches('.arrow-down')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for(i = 0; i < dropdowns.length; i++) {
@@ -40,6 +40,7 @@ window.onclick = function(event) {
     }
   }
 }
+
 $(document).ready(function(){
 
 	//Check to see if the window is top if not then display button
@@ -59,14 +60,28 @@ $(document).ready(function(){
 
 });
 
+/////////////////////
+// Side Navigation //
+/////////////////////
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+var navwidth;
+
 function openNav() {
     document.getElementById("SideNav").style.width = "32%";
-    document.getElementById("main").style.marginRight = "29%";
+    document.getElementById("topbar").style.width = "0";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
     document.getElementById("SideNav").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
+    document.getElementById("topbar").style.width = "32%";
+}
+///////////
+// Modal //
+///////////
+var modal = document.getElementById('id05');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        document.getElementById('task-form').innerHTML='';
+    }
 }

@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -10,10 +11,9 @@
   </title>
 </head>
 <body>
-
   <!-- <a href="#" class="add">Scroll To Top</a> -->
-  <div onclick="openNav()" class="top-bar">
-    Welcome back, <%= @user.user_id %>! &#9668;
+  <div id="topbar" onclick="openNav()" class="top-bar">
+      Welcome back, <%= @user.user_id %>! &#9668;
   </div>
   <div id="SideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -36,6 +36,7 @@
       <img class="circle" id="user_img" src="/img/user.png">
       <% end %>
       <div class="info-container">
+
         <label for="user_id"><b>ログイン名</b></label><br>
         <label for="user_id"><%= @user.user_id%></label><br><br>
         <label for="password"><b>パスワード</b></label><br>
