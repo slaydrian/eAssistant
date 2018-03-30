@@ -29,7 +29,7 @@ function dropdownfunction() {
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.arrow-down')) {
+  if (!event.target.matches('.top-bar')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for(i = 0; i < dropdowns.length; i++) {
@@ -40,7 +40,6 @@ window.onclick = function(event) {
     }
   }
 }
-
 $(document).ready(function(){
 
 	//Check to see if the window is top if not then display button
@@ -59,3 +58,15 @@ $(document).ready(function(){
 	});
 
 });
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("SideNav").style.width = "32%";
+    document.getElementById("main").style.marginRight = "29%";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("SideNav").style.width = "0";
+    document.getElementById("main").style.marginRight = "0";
+}

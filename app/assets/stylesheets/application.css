@@ -20,6 +20,11 @@ body, html {
   background-repeat: no-repeat;
 }
 
+.white {
+  background: white;
+  height: 100%;
+}
+
 h1 {
   text-align: center;
 }
@@ -68,7 +73,8 @@ h1 {
 
 .welcome-message-container {
   position: relative;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   padding-top:10%;
   width: 50%;
   height: 50%;
@@ -79,8 +85,7 @@ h1 {
   text-align: left;
   font-size: 300%;
   font-weight: 300;
-  margin-left: 10%;
-  margin-right: 20%;
+  margin-left: 22%;
   padding-top: 10%;
 }
 
@@ -94,7 +99,7 @@ h1 {
   text-align: left;
   font-size: 100%;
   font-weight: 300;
-  margin-left: 20%;
+  margin-left: 32%;
   margin-top: 1%;
 }
 
@@ -140,13 +145,12 @@ h1 {
   }
 }
 
-
-
 .login-container {
   position: relative;
   margin: auto;
   background-color: white;
   width: 50%;
+  min-width: 200px;
   height: 50%;
   text-align: center;
 }
@@ -189,7 +193,9 @@ button, input[type=submit] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  max-width: 500px;
+  min-width: 100px;
 }
 
 button:hover, input[type=submit]:hover {
@@ -264,7 +270,7 @@ span.psw {
 .top-bar {
   text-align: center;
   position: fixed;
-  z-index: 50;
+  z-index: 49;
   border-radius: 0 0 0 10px;
   max-width: 32%;
   right: 0;
@@ -274,6 +280,20 @@ span.psw {
   background: black;
   padding: 3% 3% 3% 3%;
   color: white;
+  cursor: pointer;
+}
+
+.top-bar-shadow {
+  content: '';
+  position: absolute;
+  border-radius: 0 0 0 10px;
+  width: 100%;
+  height:10%;
+  top: 0;
+  right: 0;
+  background: white;
+  /* padding: 3% 3% 3% 3%; */
+  cursor: pointer;
 }
 
 .userID {
@@ -283,17 +303,17 @@ span.psw {
 }
 
 .circle {
-  position: relative;
+  position: static;
   display: block;
-  width: 90%;
+  width: 50%;
   max-width: 200px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: -100px;
+  margin-bottom: 20px;
   padding: 5px;
   border-radius: 50%;
-  border: 5px solid black;
-  background: white;
+  border: 5px solid white;
+  background: black;
 }
 
 .square {
@@ -382,13 +402,12 @@ span.psw {
 .main-container {
   position: relative;
   width: 90%;
-  min-height: 100%;
+  min-height: 90%;
   margin: auto;
   top: 100px;
-  padding: 5%;
+  padding: 5% 5% 0% 5%;
   background: white;
   border-top: 5px solid black;
-  z-index: 10;
 }
 
 .add-button {
@@ -520,7 +539,6 @@ span.psw {
 .info-container {
   position: relative;
   width: 60%;
-  padding-top: 150px;
   margin: auto;
   text-align: left;
 }
@@ -593,7 +611,9 @@ table#tsk a:hover {
 
 .bgline {
   content:"";
-  position: fixed;
+  display: block;
+  position: absolute;
+  margin: auto;
   z-index: 0;
   top: 0;
   bottom: 0;
@@ -629,6 +649,7 @@ table#tsk a:hover {
    display: block;
 }
 
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd}
 
@@ -651,6 +672,10 @@ table#tsk a:hover {
   border-top-color: white;
 }
 
+.top-bar-shadow:hover .arrow-down {
+  border-top-color: white;
+}
+
 .logo {
   display: block;
   position: relative;
@@ -659,7 +684,7 @@ table#tsk a:hover {
   min-width: 50px;
   margin-left: auto;
   margin-right: auto;
-  top: 2%;
+  top: 8%;
   padding: 10px;
   background: white;
   border-radius: 50%;
@@ -679,6 +704,60 @@ table#tsk a:hover {
   z-index: 100;
   left: 50%;
   right: 50%;
+}
+
+.sidenav {
+  width: 0;
+  max-width: 300px;
+  height: 100%;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background-color: transparent;
+}
+
+#main {
+    transition: margin-right .5s;
+}
+
+@media screen and (max-height: 100px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.psw a {
+  font-weight: normal;
+}
+
+.psw a:hover {
+  background-color: transparent;
+  color: black;
 }
 
 /* table#tsk thead tr {background: #0FF}
