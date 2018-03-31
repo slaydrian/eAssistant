@@ -39,7 +39,6 @@
       <table id="tsk" class="tablesorter">
         <thead>
           <tr>
-            <th>色</th>
             <th>タスク名</th>
             <th>締切日時</th>
             <th>かかる時間</th>
@@ -53,7 +52,6 @@
           <% @tasks.each do |task| %>
           <% if(task.task_user.to_i == @current_user.id)%>
           <tr>
-            <td><font size="5%" color="<%= task.color%>">&#9829;</font></td>
             <td><%= link_to task.task_name, edit_task_path(task), remote: true %></td>
             <td><%= task.deadline_date%></td>
             <td><%= task.required_time.hour %>時間<%= task.required_time.min %>分</td>
